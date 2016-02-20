@@ -1,4 +1,6 @@
 #coding=utf-8
+import sys
+sys.path.append('/home/workspace/jobcrawler')
 from utils import HttpUtil
 from BeautifulSoup import BeautifulSoup
 from dmo.job import Job
