@@ -1,10 +1,10 @@
 #coding=utf-8
 import MySQLdb
 
-host_ip = '42.96.201.101'
-usr_name = "www"
-password = '52logsucc'
-db = 'www'
+host_ip = ''
+usr_name = ""
+password = ''
+db = ''
 
 def insert(sql, parms):
     try:
