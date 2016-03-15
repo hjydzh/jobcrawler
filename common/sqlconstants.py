@@ -14,7 +14,7 @@ SELECT
 
 const.INSERT_JOBS = """
 insert JOBS
-(JOB,COMPANY_NAME,PUBLISH_DATE)
+(JOB,COMPANY_NAME,PUBLISH_DATE, SOURCE)
 values
-(%s,%s,%s)
+(%s,%s,%s,%s)
 """

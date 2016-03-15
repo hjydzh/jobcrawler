@@ -1,7 +1,8 @@
 #coding:utf-8
 import urllib2
 import sys
-
+import urllib
+import cookielib
 
 def request(url):
     send_headers = {
@@ -10,13 +11,18 @@ def request(url):
     'Connection':'keep-alive'
     }
     req = urllib2.Request(url,headers=send_headers)
-    r  = urllib2.urlopen(req)
-
-    html = r.read()                       #返回网页内容
+    return urllib2.urlopen(req).read()
 
 
-    # sys.getfilesystemencoding()
-    return html
+def init_opener():
+    return urllib2.build_opener(urllib2.HTTPCookieProcessor(cookielib.CookieJar()))
+
+def opener_request(url, opener):
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36'}
+    post_data=urllib.urlencode({})
+    req=urllib2.Request(url,post_data,headers)
+    return opener.open(req).read()
+
 
 
 

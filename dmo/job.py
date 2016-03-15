@@ -7,3 +7,4 @@ class Job:
         self.salary = None
         self.publish_date = None
         self.experience_time = None
+        self.source = None

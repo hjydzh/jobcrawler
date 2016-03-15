@@ -52,6 +52,7 @@ class Crawler:
         job.job = job_soup.find('p' ,attrs={"class": "t1"}).text
         job.company_name = job_soup.find('p' ,attrs={"span": "t2"}).text
         job.publish_date = job_soup.find('p' ,attrs={"span": "t5"}).text
+        job.source = 'ZL'
 
     def __insert_jobs(self, jobs):
         for i,job in enumerate(jobs):
